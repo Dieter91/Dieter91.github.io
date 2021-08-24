@@ -2,7 +2,8 @@ let addTask = document.getElementsByClassName("btn-add")[0];
 let addDesc = document.getElementsByClassName("desc")[0];
 let taskBody = document.getElementById("body-tasks");
 let inputField = document.getElementsByClassName("taskInput")[0];
-function newtask() {
+
+addTask.addEventListener("click", function (event) {
   if (inputField.value) {
     var div = document.createElement("div");
     var p = document.createElement("p");
@@ -25,7 +26,11 @@ function newtask() {
   } else {
     alert("There was no input found!");
   }
-}
-addTask.addEventListener("click", function add(event) {
-  newtask();
+});
+
+inputField.addEventListener('keyup', function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    addTask.click();
+  }
 });
