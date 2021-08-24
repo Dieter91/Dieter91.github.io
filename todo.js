@@ -2,8 +2,7 @@ let addTask = document.getElementsByClassName("btn-add")[0];
 let addDesc = document.getElementsByClassName("desc")[0];
 let taskBody = document.getElementById("body-tasks");
 let inputField = document.getElementsByClassName("taskInput")[0];
-
-addTask.addEventListener("click", function add(event) {
+function newtask() {
   if (inputField.value) {
     var div = document.createElement("div");
     var p = document.createElement("p");
@@ -26,4 +25,7 @@ addTask.addEventListener("click", function add(event) {
   } else {
     alert("There was no input found!");
   }
+}
+addTask.addEventListener("click", function add(event) {
+  newtask();
 });
